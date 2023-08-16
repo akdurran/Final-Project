@@ -28,7 +28,6 @@ shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("1_cyp0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36691, 0)
-mass = 85.0
 
 [node name="floor" parent="." instance=ExtResource("2_44eta")]
 
