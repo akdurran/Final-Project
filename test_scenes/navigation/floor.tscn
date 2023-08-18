@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgw8e63s1k0t2"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7dsm0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sr8ms"]
+
+[node name="floor" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_7dsm0")
+
+[node name="plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_sr8ms")
+skeleton = NodePath("../..")

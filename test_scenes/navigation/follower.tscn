@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://djhldbpk00xfh"]
+
+[ext_resource type="Script" path="res://follower.gd" id="1_pmpwp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4jfur"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7qgk"]
+albedo_color = Color(0.407843, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1dptn"]
+material = SubResource("StandardMaterial3D_k7qgk")
+
+[node name="follower" type="CharacterBody3D" groups=["follower"]]
+script = ExtResource("1_pmpwp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_4jfur")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_1dptn")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
