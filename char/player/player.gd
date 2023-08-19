@@ -1,4 +1,4 @@
-extends RigidBody3D
+class_name Player extends RigidBody3D
 
 @onready var shape_cast = $shape_cast
 @onready var camera = $rotation_helper/camera

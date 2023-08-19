@@ -1,4 +1,4 @@
-extends StaticBody3D
+class_name Cover extends StaticBody3D
 
 @export var cover_points : Array[Node]
 
@@ -8,6 +8,7 @@ func _ready():
 
 func find_vacant_point():
 	for point in cover_points:
-		if point.occupied == false:
-			return point
+		if point is CoverPoint:
+			if point.occupied == false:
+				return point
 	return null

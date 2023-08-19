@@ -10,12 +10,13 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kjd1m"]
 
-[node name="player" type="RigidBody3D"]
+[node name="ally" type="RigidBody3D"]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 mass = 85.0
 physics_material_override = SubResource("PhysicsMaterial_m34o1")
+can_sleep = false
 script = ExtResource("1_g85ws")
 
 [node name="collider" type="CollisionShape3D" parent="."]

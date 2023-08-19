@@ -1,4 +1,4 @@
-extends RigidBody3D
+class_name Ally extends RigidBody3D
 
 @onready var shape_cast = $shape_cast
 @export var look_speed = 0.01
