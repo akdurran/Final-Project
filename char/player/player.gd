@@ -19,6 +19,9 @@ func _input(event):
 		rotation_helper.rotate_y(rotx*look_speed)
 		camera.rotation.x = clamp(camera.rotation.x + roty * look_speed, deg_to_rad(-90), deg_to_rad(90))
 	
+	if event is InputEventKey or event is InputEventJoypadButton:
+		sleeping = false
+	
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 
