@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://djhldbpk00xfh"]
 
-[ext_resource type="Script" path="res://follower.gd" id="1_pmpwp"]
+[ext_resource type="Script" path="res://test_scenes/navigation/follower.gd" id="1_pmpwp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4jfur"]
 

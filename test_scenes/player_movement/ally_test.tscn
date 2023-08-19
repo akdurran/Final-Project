@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bel7pyilwmf2g"]
+[gd_scene load_steps=2 format=3 uid="uid://bel7pyilwmf2g"]
+
+[ext_resource type="PackedScene" uid="uid://dca0kq3bkrg2h" path="res://test_scenes/common/floor.tscn" id="1_kyves"]
 
 [node name="ally_test" type="Node3D"]
+
+[node name="floor" parent="." instance=ExtResource("1_kyves")]

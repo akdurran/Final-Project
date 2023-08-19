@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c74me2bu7xks5" path="res://char/player/player.tscn" id="1_iije2"]
 [ext_resource type="Script" path="res://test_scenes/navigation/nav_test.gd" id="1_xcjpi"]
-[ext_resource type="PackedScene" uid="uid://dca0kq3bkrg2h" path="res://test_scenes/player_movement/floor.tscn" id="2_poaoi"]
-[ext_resource type="PackedScene" uid="uid://irspa6ysrqj1" path="res://test_scenes/player_movement/cube.tscn" id="3_l8c82"]
+[ext_resource type="PackedScene" uid="uid://dca0kq3bkrg2h" path="res://test_scenes/common/floor.tscn" id="2_poaoi"]
+[ext_resource type="PackedScene" uid="uid://irspa6ysrqj1" path="res://test_scenes/common/cube.tscn" id="3_l8c82"]
 [ext_resource type="PackedScene" uid="uid://djhldbpk00xfh" path="res://test_scenes/navigation/follower.tscn" id="6_5clb7"]
 [ext_resource type="PackedScene" uid="uid://c1eup178qto40" path="res://test_scenes/navigation/world.tscn" id="6_xlnwg"]
 
