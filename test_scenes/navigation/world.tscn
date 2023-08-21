@@ -254,7 +254,7 @@ transform = Transform3D(5, 0, 0, 0, 2.5, 0, 0, 0, 5, 0, 0, 51.2425)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 
 [node name="ramp long" type="CSGPolygon3D" parent="CSGCombiner3D/cp_orange/Ramps/side1"]
-transform = Transform3D(-2.18557e-07, 0, -25, 0, 2.5, 0, 5, 0, -1.09278e-06, 0.464, 0.5, -43.215)
+transform = Transform3D(-2.18557e-07, 0, -25, 0, 2.5, 0, 5, 0, -1.09278e-06, 0.464, 0.487, -43.285)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 
 [node name="ramp long2" type="CSGPolygon3D" parent="CSGCombiner3D/cp_orange/Ramps/side1"]
@@ -281,7 +281,7 @@ transform = Transform3D(5, 0, 0, 0, 2.5, 0, 0, 0, 5, 0, 0, 51.2425)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 
 [node name="ramp long" type="CSGPolygon3D" parent="CSGCombiner3D/cp_orange/Ramps/side2"]
-transform = Transform3D(-2.18557e-07, 0, -25, 0, 2.5, 0, 5, 0, -1.09278e-06, 0.464, 0.5, -43.215)
+transform = Transform3D(-2.18557e-07, 0, -25, 0, 2.5, 0, 5, 0, -1.09278e-06, 0.464, 0.497, -43.215)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 
 [node name="ramp long2" type="CSGPolygon3D" parent="CSGCombiner3D/cp_orange/Ramps/side2"]
