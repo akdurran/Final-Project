@@ -9,7 +9,6 @@ environment = SubResource("Environment_wevpn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.936033, 0.0726802, -0.344324, 0.350219, -0.0965568, 0.931678, 0.0344678, -0.99267, -0.115834, -212.781, 517.079, 20.5262)
-visible = false
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149817, 0.224197, -0.440346)

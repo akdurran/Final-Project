@@ -7,9 +7,13 @@ func _physics_process(delta):
 	var current_location = global_transform.origin
 	var next_location = nav_agent.get_next_path_position();
 	var new_velocity = (next_location - current_location).normalized() * SPEED
+	print("distance: ", (current_location-next_location).length())
 	
-	velocity = new_velocity
-	move_and_slide()
+	#To prevent the weird shaking that happens when the ally reached its destination
+	var distance = (current_location-next_location).length()
+	if distance > 0.05:
+		velocity = new_velocity
+		move_and_slide()
 	
 
 func update_target_location(target_location):
