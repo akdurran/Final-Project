@@ -17,7 +17,7 @@ func _integrate_forces(state):
 	if nav.target_position:
 		var new_pos = nav.get_next_path_position()
 		var direction = (new_pos - position).normalized()
-				if direction and !max_speed_reached(state):
+		if direction and !max_speed_reached(state):
 			state.apply_central_force(Vector3(direction.x * acceleration, 0, direction.z * acceleration))
 
 func is_on_floor():

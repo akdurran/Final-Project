@@ -1,5 +1,7 @@
 class_name Player extends RigidBody3D
+## A physics based player character
 
+## A shape cast node to use for floor detection
 @onready var shape_cast = $shape_cast
 @onready var camera = $rotation_helper/camera
 @onready var rotation_helper = $rotation_helper
@@ -11,7 +13,7 @@ class_name Player extends RigidBody3D
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _input(event):
+func _input(event : InputEvent):
 	if event is InputEventMouseMotion:
 		var rotx = -event.relative.x
 		var roty = -event.relative.y
@@ -25,7 +27,7 @@ func _input(event):
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 
-func _integrate_forces(state):
+func _integrate_forces(state : PhysicsDirectBodyState3D):
 	if Input.is_action_just_pressed("jump")  and is_on_floor():
 		state.apply_central_impulse(Vector3(0, jump_force, 0))
 
@@ -40,8 +42,10 @@ func _integrate_forces(state):
 	if direction and !max_speed_reached(state):
 		state.apply_central_force(Vector3(direction.x * acceleration, 0, direction.z * acceleration))
 
-func is_on_floor():
+## Returns a boolean representing whether the character is on floor
+func is_on_floor() -> bool:
 	return shape_cast.is_colliding()
 
-func max_speed_reached(state):
-	return state.linear_velocity.length() >= max_speed or linear_velocity.length() <= -max_speed
+## Returns whether the character has reached max speed
+func max_speed_reached(state : PhysicsDirectBodyState3D) -> bool:
+	return state.linear_velocity.length() >= max_speed or state.linear_velocity.length() <= -max_speed

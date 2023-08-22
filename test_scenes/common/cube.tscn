@@ -10,6 +10,7 @@ material = SubResource("StandardMaterial3D_vl15t")
 
 [node name="cube" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59105, 3.22983, 0)
+mass = 100.0
 
 [node name="box" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_gb7w3")
