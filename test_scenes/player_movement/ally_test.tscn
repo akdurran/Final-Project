@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bel7pyilwmf2g"]
+[gd_scene load_steps=10 format=3 uid="uid://bel7pyilwmf2g"]
 
 [ext_resource type="PackedScene" uid="uid://dca0kq3bkrg2h" path="res://test_scenes/common/floor.tscn" id="1_kyves"]
 [ext_resource type="PackedScene" uid="uid://cv2ksi2a78qcw" path="res://char/enemy/target_dummy.tscn" id="1_xe4b5"]
 [ext_resource type="PackedScene" uid="uid://c1mvr03br1df" path="res://env/cover.tscn" id="2_t1j5w"]
 [ext_resource type="PackedScene" uid="uid://c74me2bu7xks5" path="res://char/player/player.tscn" id="4_obamo"]
+[ext_resource type="CompressedTexture3D" uid="uid://mfa7djuqy2hr" path="res://ally_test.GPUParticlesCollisionSDF3D_data.exr" id="5_7r5wl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dtn56"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -56,3 +57,9 @@ transform = Transform3D(0.650363, 0, -0.759623, 0, 1, 0, 0.759623, 0, 0.650363, 
 transform = Transform3D(-0.148569, 0, 0.988902, 0, 1, 0, -0.988902, 0, -0.148569, 12.107, 0.5, 11.3851)
 
 [node name="floor" parent="NavigationRegion3D" instance=ExtResource("1_kyves")]
+
+[node name="GPUParticlesCollisionSDF3D" type="GPUParticlesCollisionSDF3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.91594, 0)
+size = Vector3(199.593, 15.2783, 199.76)
+resolution = 5
+texture = ExtResource("5_7r5wl")

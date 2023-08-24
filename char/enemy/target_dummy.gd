@@ -10,7 +10,7 @@ var cover_point : CoverPoint
 func _physics_process(_delta):
 	handle_crouch()
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("reconsider"):
 		reconsider_cover()
 
@@ -47,19 +47,10 @@ func handle_crouch():
 func find_cover(enemy_team : String) -> CoverPoint:
 	var hidden_points : Array[CoverPoint]
 	
-	for n in get_tree().get_nodes_in_group("coverpoint"):
-		if n is CoverPoint:
-			n.num_hidden_from = 0
-			if n.occupied == false:
-				for e in get_tree().get_nodes_in_group(enemy_team):
-					var space_state = get_world_3d().direct_space_state
-					var query = PhysicsRayQueryParameters3D.create(n.global_position, e.global_position)
-					query.exclude = [self.get_rid()]
-					var result = space_state.intersect_ray(query)
-					if result.collider != e:
-						n.num_hidden_from +=1
-				n.distance = global_position.distance_to(n.global_position)
-				hidden_points.append(n)
+	for point in get_tree().get_nodes_in_group("coverpoint"):
+		if point is CoverPoint:
+			point.rank_self("player_team", "enemy_team", self)
+			hidden_points.append(point)
 	hidden_points.sort_custom(cover_quality)
 	return hidden_points[0]
 

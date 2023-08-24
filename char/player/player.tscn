@@ -31,3 +31,15 @@ shape = SubResource("CylinderShape3D_kjd1m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="camera" type="Camera3D" parent="rotation_helper"]
+
+[node name="hud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="info" type="Label" parent="hud"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Info not rendering properly"

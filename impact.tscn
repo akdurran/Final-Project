@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddsp45om65lxw"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4pji4"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 40.04
+initial_velocity_max = 10.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_dyb8c"]
+radius = 0.01
+height = 0.02
+
+[node name="impact" type="GPUParticles3D"]
+amount = 100
+lifetime = 60.0
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_4pji4")
+draw_pass_1 = SubResource("SphereMesh_dyb8c")
