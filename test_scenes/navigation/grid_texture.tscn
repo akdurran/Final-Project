@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://douxyn0bwncnm"]
+
+[ext_resource type="Texture2D" uid="uid://dhimfvrggbprk" path="res://test_scenes/navigation/grid_texture 1mx1m.png" id="1_xiq0n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5rnr"]
+albedo_texture = ExtResource("1_xiq0n")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_7hojd"]
+material = SubResource("StandardMaterial3D_g5rnr")
+size = Vector3(10, 10, 10)
+
+[node name="Node3D" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_7hojd")
