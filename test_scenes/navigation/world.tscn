@@ -435,3 +435,20 @@ material = SubResource("StandardMaterial3D_req33")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0955, 1.58577, -101.459)
 size = Vector3(21.2408, 2.76352, 23.2938)
 material = SubResource("StandardMaterial3D_1k6v8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/cp_orange/Center Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0289, 13.5924, -100.444)
+size = Vector3(21.241, 21, 21)
+material = SubResource("StandardMaterial3D_tleay")
+
+[node name="negative fill" type="CSGBox3D" parent="CSGCombiner3D/cp_orange/Center Tower/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.24937, 0)
+operation = 2
+size = Vector3(19.5, 21, 19.5)
+material = SubResource("StandardMaterial3D_tleay")
+
+[node name="doorways" type="CSGBox3D" parent="CSGCombiner3D/cp_orange/Center Tower/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.29389, -0.113991)
+operation = 2
+size = Vector3(5.12274, 10.5829, 23.3507)
+material = SubResource("StandardMaterial3D_tleay")
