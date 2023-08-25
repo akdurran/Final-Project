@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c74me2bu7xks5"]
+[gd_scene load_steps=7 format=3 uid="uid://c74me2bu7xks5"]
 
 [ext_resource type="Script" path="res://char/player/player.gd" id="1_0ppys"]
 [ext_resource type="PhysicsMaterial" uid="uid://d1ea4arqh2h2o" path="res://char_physics_material.tres" id="1_hnfr3"]
+[ext_resource type="Texture2D" uid="uid://p1odgqpbl8hf" path="res://char/player/crosshair.png" id="3_c4fnx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3107"]
 
@@ -31,7 +32,26 @@ shape = SubResource("CylinderShape3D_kjd1m")
 [node name="rotation_helper" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="camera" type="Camera3D" parent="rotation_helper"]
+[node name="camera" type="Camera3D" parent="rotation_helper" groups=["player_camera"]]
+
+[node name="TextureRect" type="TextureRect" parent="rotation_helper/camera"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_c4fnx")
+
+[node name="Vision RayCast3D" type="RayCast3D" parent="rotation_helper" groups=["player_raycast"]]
+visible = false
+target_position = Vector3(0, -1, -50)
+debug_shape_custom_color = Color(1, 0.160784, 0.545098, 1)
 
 [node name="hud" type="Control" parent="."]
 layout_mode = 3

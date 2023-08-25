@@ -13,6 +13,7 @@ func _integrate_forces(state):
 	
 
 func update_target_location(target_location):
+	print("T:", target_location)
 	nav_agent.set_target_position(target_location)
 
 func max_speed_reached(state : PhysicsDirectBodyState3D) -> bool:

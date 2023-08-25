@@ -40,5 +40,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49758, 3.25483, 0.861101)
 [node name="target_dummy" parent="." instance=ExtResource("8_b26vd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.6625, 1.69262, -40.5387)
 
-[node name="follower" parent="." groups=["player_team"] instance=ExtResource("6_5clb7")]
+[node name="follower0" parent="." groups=["player_team"] instance=ExtResource("6_5clb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.724, -0.0103235, 3.84701)
+
+[node name="follower1" parent="." instance=ExtResource("6_5clb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7165, 0.120004, 10.2609)

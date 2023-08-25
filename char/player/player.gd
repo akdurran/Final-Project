@@ -5,6 +5,7 @@ class_name Player extends RigidBody3D
 @onready var shape_cast := $shape_cast
 @onready var camera := $rotation_helper/camera
 @onready var rotation_helper := $rotation_helper
+@onready var raycast := $"rotation_helper/Vision RayCast3D"
 @onready var info := $hud/info
 @export var look_speed := 0.01
 @export var jump_force := 500
@@ -16,14 +17,16 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-
 func _input(event : InputEvent):
 	if event is InputEventMouseMotion:
 		var rotx : float = -event.relative.x
 		var roty : float = -event.relative.y
+		var new_x_rotation = clamp(camera.rotation.x + roty * look_speed, deg_to_rad(-90), deg_to_rad(90))
 		
 		rotation_helper.rotate_y(rotx*look_speed)
-		camera.rotation.x = clamp(camera.rotation.x + roty * look_speed, deg_to_rad(-90), deg_to_rad(90))
+		
+		camera.rotation.x = new_x_rotation
+		raycast.rotation.x = new_x_rotation
 	
 	if event is InputEventKey or event is InputEventJoypadButton:
 		sleeping = false
