@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://djhldbpk00xfh"]
+[gd_scene load_steps=6 format=3 uid="uid://djhldbpk00xfh"]
 
 [ext_resource type="Script" path="res://test_scenes/navigation/follower.gd" id="1_pmpwp"]
+[ext_resource type="PhysicsMaterial" uid="uid://d1ea4arqh2h2o" path="res://char_physics_material.tres" id="1_yxvdv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4jfur"]
 
@@ -10,7 +11,13 @@ albedo_color = Color(0.407843, 1, 1, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1dptn"]
 material = SubResource("StandardMaterial3D_k7qgk")
 
-[node name="follower" type="CharacterBody3D" groups=["follower"]]
+[node name="follower" type="RigidBody3D" groups=["follower"]]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 85.0
+physics_material_override = ExtResource("1_yxvdv")
+can_sleep = false
 script = ExtResource("1_pmpwp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xp0sb"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kjd1m"]
+height = 5.0
 
 [node name="player" type="RigidBody3D" groups=["player_team"]]
 axis_lock_angular_x = true

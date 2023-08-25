@@ -18,7 +18,7 @@ func _integrate_forces(state):
 	var new_position = nav.get_next_path_position()
 	var direction = (new_position - global_position).normalized() * acceleration
 	if not max_speed_reached(state):
-		state.apply_central_force(direction)
+		state.apply_central_force(Vector3(direction.x, 0, direction.z))
 	
 
 func reconsider_cover():
@@ -27,12 +27,14 @@ func reconsider_cover():
 	cover_point = find_cover("player_team")
 	cover_point.occupied = true
 	nav.set_target_position(cover_point.global_position)
+	
 
 func _ready():
 	crouching = false
 	cover_point = find_cover("player_team")
 	cover_point.occupied = true
 	nav.set_target_position(cover_point.global_position)
+	
 
 func handle_crouch():
 	if crouching: 

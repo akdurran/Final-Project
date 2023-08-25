@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr7oqy158uc3e"]
+
+[ext_resource type="Script" path="res://env/cover_point.gd" id="1_lrh0v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pspmy"]
+radius = 0.1
+height = 0.2
+
+[node name="cover_point" type="Marker3D" groups=["coverpoint"]]
+script = ExtResource("1_lrh0v")
+
+[node name="sphere" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_pspmy")
