@@ -90,332 +90,291 @@ environment = SubResource("Environment_wevpn")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.936033, 0.0726802, -0.344324, 0.350219, -0.0965568, 0.931678, 0.0344678, -0.99267, -0.115834, -212.781, 517.079, 20.5262)
 
-[node name="Full_map_CSGCombiner3D" type="CSGCombiner3D" parent="." groups=["CSGCombiner"]]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.149817, 0.224197, -0.440346)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
-[node name="Example" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D"]
-
-[node name="cp_orange" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D"]
-
-[node name="Floor" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange"]
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Floor"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.149817, 0.224197, -0.440346)
 size = Vector3(124.749, 1, 76.3453)
 material = SubResource("StandardMaterial3D_0py3t")
 
-[node name="Center" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Floor"]
-transform = Transform3D(-0.000678145, -0.000504178, 1, 0.000131625, 1, 0.000504265, -1, 0.00013196, -0.00067808, 24.1597, 0, -100.549)
+[node name="Center" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.000339072, -0.000252089, 0.5, 6.58125e-05, 0.5, 0.000252133, -0.5, 6.598e-05, -0.00033904, 11.93, 0.224197, -50.7148)
 size = Vector3(124.749, 1, 76.3453)
 material = SubResource("StandardMaterial3D_0py3t")
 
-[node name="side_1_raised_floor" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Floor/Center"]
+[node name="side_1_raised_floor" type="CSGBox3D" parent="CSGCombiner3D/Center"]
 transform = Transform3D(1, 4.94765e-10, -1.97906e-09, -4.94765e-10, 1, -1.87086e-11, 0, -1.36993e-11, 1, -33.7601, 2.50337, -14.4453)
 size = Vector3(46.9822, 1, 48.0047)
 material = SubResource("StandardMaterial3D_hpeod")
 
-[node name="side_2_raised_floor" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Floor/Center"]
+[node name="side_2_raised_floor" type="CSGBox3D" parent="CSGCombiner3D/Center"]
 transform = Transform3D(1, 7.27596e-10, -2.91038e-09, -7.27596e-10, 1, -1.85878e-11, 0, -1.35429e-11, 1, 33.8827, 2.47998, 14.2872)
 size = Vector3(46.9822, 1, 48.0047)
 material = SubResource("StandardMaterial3D_hpeod")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.098, 0, -201.127)
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 23.8992, 0.224197, -101.004)
 size = Vector3(124.749, 1, 76.3453)
 material = SubResource("StandardMaterial3D_0py3t")
 
-[node name="point1_floor" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Floor"]
-transform = Transform3D(20, 0, 0, 0, 2.5, 0, 0, 0, 20, 52.166, 1.7304, 27.3363)
+[node name="point1_floor" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(10, 0, 0, 0, 1.25, 0, 0, 0, 10, 25.9332, 1.0894, 13.2278)
 material = SubResource("StandardMaterial3D_0py3t")
 
-[node name="point2_floor" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Floor"]
-transform = Transform3D(20, 0, 0, 0, 2.5, 0, 0, 0, 20, -3.97695, 1.7304, -228.464)
+[node name="point2_floor" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(10, 0, 0, 0, 1.25, 0, 0, 0, 10, -2.13829, 1.0894, -114.672)
 material = SubResource("StandardMaterial3D_0py3t")
 
-[node name="Walls" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange"]
-
-[node name="side1" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls"]
-
-[node name="Cube" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4596, 8.01587, -30.6531)
+[node name="Cube" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.8796, 4.23213, -15.7669)
 size = Vector3(15, 15, 15)
 material = SubResource("StandardMaterial3D_tleay")
 
-[node name="Cube2" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40756, 8.02733, -45.6671)
+[node name="Cube2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.3536, 4.23786, -23.2739)
 size = Vector3(15, 15, 15)
 material = SubResource("StandardMaterial3D_tleay")
 
-[node name="spawn_half_wall" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2857, 1.33983, 27.6794)
+[node name="spawn_half_wall" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.79267, 0.894112, 13.3994)
 size = Vector3(1, 1.67318, 20.9563)
 material = SubResource("StandardMaterial3D_tleay")
 
-[node name="Center_Wall" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.1534, 2.03186, -42.7435)
+[node name="Center_Wall" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 15.9269, 1.24013, -21.8121)
 size = Vector3(1, 4.14771, 13.3135)
 material = SubResource("StandardMaterial3D_tleay")
 
-[node name="Center_Wall2" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25.9739, 2.03186, -40.2446)
+[node name="Center_Wall2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 12.8371, 1.24013, -20.5626)
 size = Vector3(1, 4.14771, 4.06278)
 material = SubResource("StandardMaterial3D_tleay")
 
-[node name="Center_Wall3" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 36.3044, 2.03186, -68.7296)
+[node name="Center_Wall3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 18.0024, 1.24013, -34.8051)
 size = Vector3(1, 4.14771, 5.08766)
 material = SubResource("StandardMaterial3D_tleay")
 
-[node name="Point" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1"]
-
-[node name="point_walls" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point"]
-
-[node name="Center_Wall2" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point/point_walls"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.6706, 2.03186, 14.6596)
+[node name="Center_Wall4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 24.1855, 1.24013, 6.88945)
 size = Vector3(1, 4.14771, 5.35257)
 material = SubResource("StandardMaterial3D_mh4bc")
 
-[node name="Center_Wall3" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point/point_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.6705, 2.03186, 16.8378)
+[node name="Center_Wall5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 22.1854, 1.24013, 7.97855)
 size = Vector3(1, 4.14771, 7.00354)
 material = SubResource("StandardMaterial3D_mh4bc")
 
-[node name="Center_Wall4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point/point_walls"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 41.6684, 2.03186, 20.8318)
+[node name="Center_Wall6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 20.6844, 1.24013, 9.97555)
 size = Vector3(1, 4.14771, 6.96538)
 material = SubResource("StandardMaterial3D_mh4bc")
 
-[node name="Center_Wall5" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point/point_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.4058, 2.03186, 23.8642)
+[node name="Center_Wall7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 19.5531, 1.24013, 11.4918)
 size = Vector3(1, 4.14771, 5.51251)
 material = SubResource("StandardMaterial3D_mh4bc")
 
-[node name="cover_walls" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point"]
-
-[node name="Center_Wall4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point/cover_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 59.5485, 5.51313, -5.71664)
+[node name="Center_Wall8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 29.6244, 2.98076, -3.29867)
 size = Vector3(1, 10.2397, 5.27308)
 material = SubResource("StandardMaterial3D_7hm8g")
 
-[node name="Center_Wall5" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point/cover_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.3043, 1.38774, -5.71664)
+[node name="Center_Wall9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 27.0023, 0.918067, -3.29867)
 size = Vector3(1, 2.39666, 5.27308)
 material = SubResource("StandardMaterial3D_7hm8g")
 
-[node name="Center_Wall6" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point/cover_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50.5658, 0.28462, -5.71664)
+[node name="Center_Wall10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 25.1331, 0.366507, -3.29867)
 size = Vector3(1, 10.2397, 2.20152)
 material = SubResource("StandardMaterial3D_7hm8g")
 
-[node name="Center_Wall7" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1/Point/cover_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 46.8352, 1.38774, -5.71664)
+[node name="Center_Wall11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 23.2678, 0.918067, -3.29867)
 size = Vector3(1, 2.39666, 5.27308)
 material = SubResource("StandardMaterial3D_7hm8g")
 
-[node name="Center_Wall4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1899, 2.03186, -79.4671)
+[node name="Center_Wall12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 16.9451, 1.24013, -40.1739)
 size = Vector3(1, 4.14771, 22.4237)
 material = SubResource("StandardMaterial3D_y0gy0")
 
-[node name="side2" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.1661, 0, -201.04)
-
-[node name="Cube" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4596, 8.01587, -30.6531)
+[node name="Cube3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 34.663, 4.23213, -85.6338)
 size = Vector3(15, 15, 15)
 material = SubResource("StandardMaterial3D_63pio")
 
-[node name="Cube2" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40756, 8.02733, -45.6671)
+[node name="Cube4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 27.137, 4.23786, -78.1268)
 size = Vector3(15, 15, 15)
 material = SubResource("StandardMaterial3D_63pio")
 
-[node name="spawn_half_wall" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2857, 1.19465, 27.6794)
+[node name="spawn_half_wall2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 31.5761, 0.821522, -114.8)
 size = Vector3(1, 2.45628, 20.9563)
 material = SubResource("StandardMaterial3D_63pio")
 
-[node name="Center_Wall" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.1534, 2.03186, -42.7435)
+[node name="Center_Wall13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, 7.85653, 1.24013, -79.5886)
 size = Vector3(1, 4.14771, 13.3135)
 material = SubResource("StandardMaterial3D_63pio")
 
-[node name="Center_Wall2" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25.9739, 2.03186, -40.2446)
+[node name="Center_Wall14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 8.74228e-08, 0, 0.5, 0, -8.74228e-08, 0, 0.5, 10.9463, 1.24013, -80.838)
 size = Vector3(1, 4.14771, 4.06278)
 material = SubResource("StandardMaterial3D_63pio")
 
-[node name="Center_Wall3" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 36.3044, 2.03186, -68.7296)
+[node name="Center_Wall15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, 5.78104, 1.24013, -66.5955)
 size = Vector3(1, 4.14771, 5.08766)
 material = SubResource("StandardMaterial3D_63pio")
 
-[node name="Point" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2"]
-
-[node name="point_walls" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point"]
-
-[node name="Center_Wall2" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point/point_walls"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.6706, 2.03186, 14.6596)
+[node name="Center_Wall16" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 8.74228e-08, 0, 0.5, 0, -8.74228e-08, 0, 0.5, -0.402067, 1.24013, -108.29)
 size = Vector3(1, 4.14771, 5.35257)
 material = SubResource("StandardMaterial3D_a4cq8")
 
-[node name="Center_Wall3" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point/point_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.6705, 2.03186, 16.8378)
+[node name="Center_Wall17" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, 1.59798, 1.24013, -109.379)
 size = Vector3(1, 4.14771, 7.00354)
 material = SubResource("StandardMaterial3D_a4cq8")
 
-[node name="Center_Wall4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point/point_walls"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 41.6684, 2.03186, 20.8318)
+[node name="Center_Wall18" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 8.74228e-08, 0, 0.5, 0, -8.74228e-08, 0, 0.5, 3.09903, 1.24013, -111.376)
 size = Vector3(1, 4.14771, 6.96538)
 material = SubResource("StandardMaterial3D_a4cq8")
 
-[node name="Center_Wall5" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point/point_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.4058, 2.03186, 23.8642)
+[node name="Center_Wall19" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, 4.23033, 1.24013, -112.892)
 size = Vector3(1, 4.14771, 5.51251)
 material = SubResource("StandardMaterial3D_a4cq8")
 
-[node name="cover_walls" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point"]
-
-[node name="Center_Wall4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point/cover_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 59.5485, 5.51313, -5.71664)
+[node name="Center_Wall20" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, -5.84102, 2.98076, -98.102)
 size = Vector3(1, 10.2397, 5.27308)
 material = SubResource("StandardMaterial3D_23o7d")
 
-[node name="Center_Wall5" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point/cover_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.3043, 1.38774, -5.71664)
+[node name="Center_Wall21" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, -3.21892, 0.918067, -98.102)
 size = Vector3(1, 2.39666, 5.27308)
 material = SubResource("StandardMaterial3D_23o7d")
 
-[node name="Center_Wall6" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point/cover_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50.5658, 0.28462, -5.71664)
+[node name="Center_Wall22" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, -1.34967, 0.366507, -98.102)
 size = Vector3(1, 10.2397, 2.20152)
 material = SubResource("StandardMaterial3D_23o7d")
 
-[node name="Center_Wall7" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2/Point/cover_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 46.8352, 1.38774, -5.71664)
+[node name="Center_Wall23" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, 0.515633, 0.918067, -98.102)
 size = Vector3(1, 2.39666, 5.27308)
 material = SubResource("StandardMaterial3D_23o7d")
 
-[node name="Center_Wall4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Walls/side2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1899, 2.03186, -79.4671)
+[node name="Center_Wall24" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 6.83829, 1.24013, -61.2268)
 size = Vector3(1, 4.14771, 22.4237)
 material = SubResource("StandardMaterial3D_8cuyd")
 
-[node name="Map Walls" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange"]
-
-[node name="side1" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls"]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls/side1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.0969, 37.8359)
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.149817, 9.27265, 18.4776)
 size = Vector3(124.665, 38.3181, 1)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls/side1"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -62.8221, 18.5811, -0.555926)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -31.5609, 9.51475, -0.718309)
 size = Vector3(77.1013, 37.9579, 1)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls/side1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -38.7067, 16.5141, -38.6633)
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -19.5032, 8.48125, -19.772)
 size = Vector3(49.2127, 42.189, 1)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls/side1"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.6437, 17.6501, -61.1913)
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 31.172, 9.04925, -31.036)
 size = Vector3(201.454, 38.788, 1)
 
-[node name="side2" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.0299, 0, -201.128)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls/side2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.0969, 37.8359)
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 23.8651, 9.27265, -119.922)
 size = Vector3(124.665, 37.9579, 1)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls/side2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -62.8221, 18.5811, -0.555926)
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, 55.2762, 9.51475, -100.726)
 size = Vector3(77.1013, 37.9579, 1)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls/side2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -38.7067, 16.5141, -38.6633)
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 8.74228e-08, 0, 0.5, 0, -8.74228e-08, 0, 0.5, 43.2185, 8.48125, -81.6727)
 size = Vector3(49.2127, 42.189, 1)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Map Walls/side2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.6437, 17.6501, -61.1913)
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(6.55671e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 6.55671e-08, -7.45671, 9.04925, -70.4087)
 size = Vector3(201.454, 38.788, 1)
 
-[node name="Ramps" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange"]
-
-[node name="side1" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps"]
-
-[node name="ramp long" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side1"]
-transform = Transform3D(-2.18557e-07, 0, -25, 0, 2.5, 0, 5, 0, -1.09278e-06, 0.464, 0.487, -43.285)
+[node name="ramp long" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1.09279e-07, 0, -12.5, 0, 1.25, 0, 2.5, 0, -5.4639e-07, 0.082183, 0.467697, -22.0828)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_cawd8")
 
-[node name="ramp long2" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side1"]
-transform = Transform3D(5, 0, 0, 0, 2.5, 0, 0, 0, 25, 33.7539, 0.5, -43.215)
+[node name="ramp long2" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(2.5, 0, 0, 0, 1.25, 0, 0, 0, 12.5, 16.7271, 0.474197, -22.0478)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_cawd8")
 
-[node name="point_ramp1" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side1"]
-transform = Transform3D(-5, 0, -1.96295e-06, 0, 2.5, 0, 7.54979e-07, 0, -13, 42.1653, 0.486448, 24.37)
+[node name="point_ramp1" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.5, 0, -9.81475e-07, 0, 1.25, 0, 3.77489e-07, 0, -6.5, 20.9328, 0.467421, 11.7447)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_cawd8")
 
-[node name="point_ramp2" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side1"]
-transform = Transform3D(-2.18557e-07, 0, 13, 0, 2.5, 0, -5, 0, -5.68248e-07, 62.172, 0.48, 17.3349)
+[node name="point_ramp2" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1.09279e-07, 0, 6.5, 0, 1.25, 0, -2.5, 0, -2.84124e-07, 30.9362, 0.464197, 8.2271)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_cawd8")
 
-[node name="ramp long3" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side1"]
-transform = Transform3D(-2.18557e-07, 0, 30, 0, 2.5, 0, -5, 0, -1.31134e-06, 16.2785, 0.5, -90.2902)
+[node name="ramp long3" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1.09279e-07, 0, 15, 0, 1.25, 0, -2.5, 0, -6.5567e-07, 7.98943, 0.474197, -45.5854)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_cawd8")
 
-[node name="side2" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.1846, 0, -201.147)
-
-[node name="ramp long" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side2"]
-transform = Transform3D(-2.18557e-07, 0, -25, 0, 2.5, 0, 5, 0, -1.09278e-06, 0.464, 0.497, -43.215)
+[node name="ramp long4" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1.09278e-07, 0, 12.5, 0, 1.25, 0, -2.5, 0, -5.46395e-07, 23.7105, 0.472697, -79.4063)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_req33")
 
-[node name="ramp long2" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side2"]
-transform = Transform3D(5, 0, 0, 0, 2.5, 0, 0, 0, 25, 33.7539, 0.5, -43.215)
+[node name="ramp long5" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.5, 0, -1.09278e-06, 0, 1.25, 0, 2.18557e-07, 0, -12.5, 7.06554, 0.474197, -79.4063)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_req33")
 
-[node name="point_ramp1" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side2"]
-transform = Transform3D(-5, 0, -1.96295e-06, 0, 2.5, 0, 7.54979e-07, 0, -13, 42.1653, 0.486448, 24.37)
+[node name="point_ramp3" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(2.5, 0, 1.54972e-06, 0, 1.25, 0, -5.96047e-07, 0, 6.5, 2.85983, 0.467421, -113.199)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_req33")
 
-[node name="point_ramp2" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side2"]
-transform = Transform3D(-2.18557e-07, 0, 13, 0, 2.5, 0, -5, 0, -5.68248e-07, 62.172, 0.48, 17.3349)
+[node name="point_ramp4" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(3.27835e-07, 0, -6.5, 0, 1.25, 0, 2.5, 0, 8.52372e-07, -7.14352, 0.464197, -109.681)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_req33")
 
-[node name="ramp long3" type="CSGPolygon3D" parent="Full_map_CSGCombiner3D/cp_orange/Ramps/side2"]
-transform = Transform3D(-2.18557e-07, 0, 30, 0, 2.5, 0, -5, 0, -1.31134e-06, 13.639, 0.5, -90.1857)
+[node name="ramp long6" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(3.27835e-07, 0, -15, 0, 1.25, 0, 2.5, 0, 1.96701e-06, 17.123, 0.474197, -55.921)
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_req33")
 
-[node name="Center Tower" type="CSGCombiner3D" parent="Full_map_CSGCombiner3D/cp_orange"]
-
-[node name="Floor" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Center Tower"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0955, 1.58577, -101.459)
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.8979, 1.01708, -51.1698)
 size = Vector3(21.2408, 2.76352, 23.2938)
 material = SubResource("StandardMaterial3D_1k6v8")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Center Tower"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0289, 13.5924, -100.444)
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.8646, 7.0204, -50.6623)
 size = Vector3(21.241, 21, 21)
 material = SubResource("StandardMaterial3D_tleay")
 
-[node name="negative fill" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Center Tower/CSGBox3D"]
+[node name="negative fill" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.24937, 0)
 operation = 2
 size = Vector3(19.5, 21, 19.5)
 material = SubResource("StandardMaterial3D_tleay")
 
-[node name="doorways" type="CSGBox3D" parent="Full_map_CSGCombiner3D/cp_orange/Center Tower/CSGBox3D"]
+[node name="doorways" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.29389, -0.113991)
 operation = 2
 size = Vector3(5.12274, 10.5829, 23.3507)
