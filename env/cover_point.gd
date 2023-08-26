@@ -23,6 +23,8 @@ func rank_self(enemy_team : String, ally_team : String, caller: RigidBody3D):
 			var query := PhysicsRayQueryParameters3D.create(global_position, enemy.global_position)
 			query.exclude = ally_rids
 			var result = space_state.intersect_ray(query)
+			if result:
+				print(result.collider)
 			if result and result.collider != enemy:
 				num_hidden_from +=1
 		distance = global_position.distance_to(caller.global_position)

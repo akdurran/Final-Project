@@ -8,7 +8,7 @@ var cover_point := preload("res://env/cover_point.tscn")
 var currently_selected_ally := 0
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#get_tree().call_group("follower","update_target_location",player.global_transform.origin)
 	pass
 
@@ -32,7 +32,7 @@ func _input(event):
 
 func get_position_from_raycast():
 	var player_raycast = get_tree().get_nodes_in_group("player_raycast")[0]
-	var exclusion_node = $"NavigationRegion3D/World/Full_map_CSGCombiner3D"
+	var _exclusion_node = $NavigationRegion3D/World/Full_map_CSGCombiner3D
 	var collision_point = player_raycast.get_collision_point()
 	
 	player_raycast.force_raycast_update()

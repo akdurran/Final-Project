@@ -24,14 +24,14 @@ func _integrate_forces(state):
 func reconsider_cover():
 	crouching = false
 	cover_point.occupied = false
-	cover_point = find_cover("player_team")
+	cover_point = find_cover("player_team", "enemy_team")
 	cover_point.occupied = true
 	nav.set_target_position(cover_point.global_position)
 	
 
 func _ready():
 	crouching = false
-	cover_point = find_cover("player_team")
+	cover_point = find_cover("player_team", "enemy_team")
 	cover_point.occupied = true
 	nav.set_target_position(cover_point.global_position)
 	
@@ -46,12 +46,12 @@ func handle_crouch():
 			collider.scale.y = lerp(collider.scale.y, 1.0, 0.1)
 			capsule.scale.y = lerp(capsule.scale.y, 1.0, 0.1)
 
-func find_cover(enemy_team : String) -> CoverPoint:
+func find_cover(enemy_team : String, ally_team : String) -> CoverPoint:
 	var hidden_points : Array[CoverPoint]
 	
 	for point in get_tree().get_nodes_in_group("coverpoint"):
 		if point is CoverPoint:
-			point.rank_self("player_team", "enemy_team", self)
+			point.rank_self(enemy_team, ally_team, self)
 			hidden_points.append(point)
 	hidden_points.sort_custom(cover_quality)
 	return hidden_points[0]
