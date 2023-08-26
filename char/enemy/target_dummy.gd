@@ -23,17 +23,12 @@ func _integrate_forces(state):
 
 func reconsider_cover():
 	crouching = false
-	cover_point.occupied = false
+	if cover_point:
+		cover_point.occupied = false
 	cover_point = find_cover("player_team", "enemy_team")
 	cover_point.occupied = true
 	nav.set_target_position(cover_point.global_position)
 	
-
-func _ready():
-	crouching = false
-	cover_point = find_cover("player_team", "enemy_team")
-	cover_point.occupied = true
-	nav.set_target_position(cover_point.global_position)
 	
 
 func handle_crouch():
