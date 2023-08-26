@@ -1,6 +1,7 @@
 class_name CoverSystem extends NavigationRegion3D
 
 @export var cover_point := preload("res://env/cover_point.tscn")
+@export var max_height := 7
 
 func _input(event):
 	if Input.is_action_just_pressed("generate"):
@@ -16,7 +17,8 @@ func  calculate_cover():
 		
 		
 		for point in points:
-			var cover = cover_point.instantiate(PackedScene.GEN_EDIT_STATE_MAIN)
-			cover.set_position(point)
-			add_child(cover)
+			if point.y <= max_height:
+				var cover = cover_point.instantiate(PackedScene.GEN_EDIT_STATE_MAIN)
+				cover.set_position(point)
+				add_child(cover)
 		pass
