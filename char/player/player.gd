@@ -1,4 +1,4 @@
-class_name Player extends RigidBody3D
+class_name Player extends Char
 ## A physics based player character
 
 ## A shape cast node to use for floor detection
@@ -10,11 +10,10 @@ class_name Player extends RigidBody3D
 @export var look_speed := 0.01
 @export var jump_force := 500
 @export var acceleration := 5000
-@export var max_speed := 5
 @export var max_range := 1000
 
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#func _ready():
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _input(event : InputEvent):
@@ -53,16 +52,3 @@ func _integrate_forces(state : PhysicsDirectBodyState3D):
 func is_on_floor() -> bool:
 	return shape_cast.is_colliding()
 
-## Returns whether the character has reached max speed
-func max_speed_reached(state : PhysicsDirectBodyState3D) -> bool:
-	return state.linear_velocity.length() >= max_speed or state.linear_velocity.length() <= -max_speed
-
-func fire():
-	var space_state := get_world_3d().direct_space_state
-	var mousepos := get_viewport().get_mouse_position()
-	var origin : Vector3 = camera.project_ray_origin(mousepos)
-	var end : Vector3 = origin + camera.project_ray_normal(mousepos) * max_range
-	var query := PhysicsRayQueryParameters3D.create(origin, end)
-	query.collide_with_areas = true
-	var result := space_state.intersect_ray(query)
-	#if result.collider.

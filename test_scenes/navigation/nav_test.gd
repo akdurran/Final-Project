@@ -58,7 +58,6 @@ func _input(event):
 
 func get_position_from_raycast():
 	var player_raycast = get_tree().get_nodes_in_group("player_raycast")[0]
-	var _exclusion_node = $NavigationRegion3D/World/Full_map_CSGCombiner3D
 	var collision_point = player_raycast.get_collision_point()
 	
 	player_raycast.force_raycast_update()

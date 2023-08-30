@@ -1,18 +1,16 @@
-class_name TargetDummy extends RigidBody3D
-@onready var collider = $collider
-@onready var capsule = $capsule
-@onready var nav = $nav 
-@export var crouching = false
-@export var max_speed = 5
-@export var acceleration = 5000
+class_name AIChar extends Char
+
+@onready var collider := $collider
+@onready var capsule := $capsule
+@onready var nav := $nav 
+@export var crouching := false
+@export var acceleration := 5000
+@export var ally_teams : Array[String]
+@export var enemy_teams : Array[String]
 var cover_point : CoverPoint
 
 func _physics_process(_delta):
 	handle_crouch()
-
-func _input(_event):
-	if Input.is_action_just_pressed("reconsider"):
-		reconsider_cover()
 
 func _integrate_forces(state):
 	var new_position = nav.get_next_path_position()
@@ -25,7 +23,7 @@ func reconsider_cover():
 	crouching = false
 	if cover_point:
 		cover_point.occupied = false
-	cover_point = find_cover("player_team", "enemy_team")
+	cover_point = find_cover(enemy_teams, ally_teams)
 	cover_point.occupied = true
 	nav.set_target_position(cover_point.global_position)
 	
@@ -41,12 +39,12 @@ func handle_crouch():
 			collider.scale.y = lerp(collider.scale.y, 1.0, 0.1)
 			capsule.scale.y = lerp(capsule.scale.y, 1.0, 0.1)
 
-func find_cover(enemy_team : String, ally_team : String) -> CoverPoint:
+func find_cover(enemy_teams : Array[String], ally_teams : Array[String]) -> CoverPoint:
 	var hidden_points : Array[CoverPoint]
 	
 	for point in get_tree().get_nodes_in_group("coverpoint"):
 		if point is CoverPoint:
-			point.rank_self(enemy_team, ally_team, self)
+			point.rank_self_cover(enemy_teams, ally_teams, self)
 			hidden_points.append(point)
 	hidden_points.sort_custom(cover_quality)
 	return hidden_points[0]
@@ -58,6 +56,5 @@ func max_speed_reached(state : PhysicsDirectBodyState3D) -> bool:
 	return state.linear_velocity.length() >= max_speed or state.linear_velocity.length() <= -max_speed
 
 
-func _on_nav_navigation_finished():
-	crouching = true;
-	nav.set_target_position(global_position)
+func fire(target : Char):
+	pass
